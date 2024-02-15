@@ -1,0 +1,79 @@
+body {
+    background-color: #ebebeb; /* Fondo poco visible, marrón claro */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #65300dd7; /* Marrón más oscuro */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.main-content {
+    flex-basis: 80%;
+
+}
+
+.side-section {
+    flex-basis: 20%;
+}
+
+.center-section {
+    margin-bottom: 50px;
+    
+}
+.center-section p {
+    text-align: justify; /* Alineación justificada */
+    line-height: 1.6; /* Aumenta el espaciado entre líneas */
+    font-family: Arial, sans-serif; /* Utiliza una fuente adecuada */
+    font-size: 16px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+}
+
+section {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+.side-section section {
+    margin-bottom: 20px;
+}
+
+img[id="annaimg"] {
+    
+    width: 30%;
+    height: auto;
+}
+
+footer {
+    background-color: #000000ca; /* Marrón más oscuro */
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.3s ease;
+    height: 5%; /* Altura inicial */
+}
+
+.footer-content {
+    text-align: center;
+}
+
+footer:hover {
+    height: auto; /* Altura completa al hacer hover */
+}
