@@ -1,0 +1,35 @@
+:root{
+    --success: #4CAF50;
+    --error: #f44336;
+    --primary-color: #001f39;
+    --secondary-color: #004177;
+    --tertiary-color: #f1f1f1;
+    --gold: #FFD700;
+    --gold-secondary: #d6b900;
+    --gold-hover: #f06c00;
+    --text-color: #333;
+    --text-secondary: #dc7500;
+    --text-color-inverted: #f4f4f4;
+    --text-color-inverted-secondary: #9e9e9e;
+    --font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5em;
+    text-align: center;
+    font-family: var(--font-family);
+}
+
+main {
+    padding: 20em;
+    font-family: var(--font-family);
+}
+
+footer {
+    text-align: center;
+    padding: 5em;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}

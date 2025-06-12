@@ -2,28 +2,22 @@ use axum::{
     routing::{get, post},
     Router,
     response::{Html, IntoResponse, Redirect},
-    http::{HeaderMap, StatusCode},
-    extract::State,
+    http::{HeaderMap},
+    
 };
 
 use std::net::SocketAddr;
 use tokio::net::TcpListener;
 mod templates;
-use templates::{Index, FormRegistration, FormTournaments};
-use askama::Template;
+use templates::{
+    FullIndex, FullFormRegistration, FullFormTournaments,
+    IndexContent, FormRegistrationContent, FormTournamentsContent
+};
 
 use tower_http::services::ServeDir;
-use std::sync::Arc;
-
-
-
-#[derive(Clone)]
-struct AppState {
-}
 
 #[tokio::main]
 async fn main() {
-    let app_state = AppState {};
 
     let app = Router::new()
         .route("/", get(index_handler))
@@ -41,28 +35,27 @@ async fn main() {
     axum::serve(listener, app.into_make_service()).await.unwrap();
 }
 
-
 async fn index_handler(headers: HeaderMap) -> impl IntoResponse {
     if headers.contains_key("HX-Request") {
-        Html(Index {}.render().unwrap()).into_response()
+        IndexContent {}.into_response()
     } else {
-        Html(Index {}.render().unwrap()).into_response()
+        FullIndex {}.into_response()
     }
 }
 
 async fn form_registration_handler(headers: HeaderMap) -> impl IntoResponse {
     if headers.contains_key("HX-Request") {
-        Html(FormRegistration {}.render().unwrap()).into_response()
+        FormRegistrationContent {}.into_response()
     } else {
-        Html(FormRegistration {}.render().unwrap()).into_response()
+        FullFormRegistration {}.into_response()
     }
 }
 
 async fn form_tournaments_handler(headers: HeaderMap) -> impl IntoResponse {
     if headers.contains_key("HX-Request") {
-        Html(FormTournaments {}.render().unwrap()).into_response()
+        FormTournamentsContent {}.into_response()
     } else {
-        Html(FormTournaments {}.render().unwrap()).into_response()
+        FullFormTournaments {}.into_response()
     }
 }
 
@@ -70,6 +63,7 @@ async fn handle_registration_form(
 ) -> Html<String> {
     Html("<div class=\"success-toast\">¡Inscripción enviada con éxito!</div>".to_string())
 }
+
 async fn handle_tournament_form(
 ) -> Html<String> {
     Html("<div class=\"success-toast\">¡Inscripción al torneo enviada con éxito!</div>".to_string())
