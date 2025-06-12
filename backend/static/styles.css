@@ -31,7 +31,7 @@ header {
     flex-shrink: 0;
 }
 
-header #logo {
+.logo {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -44,7 +44,7 @@ header #logo {
 
 }
 
-header #icon {
+.icon {
     width: 60px;
     height: 60px;
     display: flex;
@@ -55,20 +55,20 @@ header #icon {
     flex-shrink: 0;
 }
 
-header #icon img {
+.icon img {
     max-width: 100%;
     max-height: 100%;
     display: block;
 }
 
-header #logo h1 {
+.logo h1 {
     margin: 0;
     font-size: 1.8em;
     color: var(--gold);
     white-space: nowrap;
 }
 
-header #logo p {
+.logo p {
     margin: 0;
     font-size: 1em;
     color: var(--text-color-inverted-secondary);
@@ -97,17 +97,22 @@ header nav ul li a:hover {
     color: var(--gold-hover);
 }
 
-#ubication-img, #phone-img, #mail-img {
-    width: 20px;
-    height: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 
-main {
-    padding: 20em;
-    font-family: var(--font-family);
+main #content {
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -116,62 +121,29 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     background-color: var(--tertiary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 footer {
     background-color: var(--primary-color);
     color: var(--text-color-inverted);
-    padding: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
-    font-family: var(--font-family);
+    justify-content: space-around; 
+    align-items: flex-start;
+    gap: 3em;
     margin-top: auto;
-    justify-content: space-around;
-    align-items: flex-start;
-}
-
-footer #logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     text-align: left;
-    gap: 10px;
 }
-
-footer #icon {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 50%;
-}
-
-footer #icon img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-}
-
-footer #logo h1 {
-    font-size: 1.5em;
-    color: var(--gold);
-    margin: 0;
-}
-
-footer #logo p {
-    font-size: 0.9em;
-    margin: 0;
-    color: var(--text-color-inverted-secondary);
-}
-
 
 footer h1 {
     font-size: 1.2em;
     color: var(--gold);
-    margin-bottom: 1em;
+    margin-bottom: 0.8em;
 }
 
 footer nav ul {
@@ -179,32 +151,48 @@ footer nav ul {
     margin: 0;
     padding: 0;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.6em;
 }
 
 footer nav ul li {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1em;
 }
 
 footer nav ul li a,
 footer nav ul li p {
-    color: var(--text-color-inverted);
+    color: var(--text-color-inverted-secondary);
     text-decoration: none;
     font-weight: normal;
     font-size: 0.95em;
+    transition: color 0.3s ease;
+    margin: 0.35em;
 }
 
-footer nav ul li a:hover {
+footer nav ul li a:hover,
+footer nav ul li p:hover {
     color: var(--gold-hover);
 }
 
+#ubication-img, #phone-img, #mail-img {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#ubication-img img, #phone-img img, #mail-img img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
 #copyright {
     width: 100%;
     text-align: center;
-    margin-top: 1.5em;
-    padding-top: 1.5em;
+    margin-top: 0;
     border-top: 1px solid var(--text-color-inverted-secondary);
     font-size: 0.85em;
     color: var(--text-color-inverted-secondary);
