@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Gambito de Puente Tocinos{% endblock %}</title>
+        <link rel="stylesheet" href="../static/styles.css">
+        <script src="../static/min_htmx.js"></script>  
+    </head>
+
+    <body>
+        <div id="toast"></div>
+        <header>
+            <div id="logo">
+                <div id="icon"></div>
+                <h1>Gambito de Puente tocinos</h1>
+                <p>Asociación de ajedrez</p>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li><a href="/" hx-get="/" hx-target="#content" hx-push-url="true">Inicio</a></li>
+                        <li><a href="/news" hx-get="/news" hx-target="#content" hx-push-url="true">Noticias</a></li>
+                        <li><a href="/schedule" hx-get="/schedule" hx-target="#content" hx-push-url="true">Horarios</a></li>
+                        <li><a href="/funders" hx-get="/funders" hx-target="#content" hx-push-url="true">Fundadores</a></li>
+                        <li><a href="/galery" hx-get="/galery" hx-target="#content" hx-push-url="true">Galería</a></li>
+                        <li><a href="/form" hx-get="/form" hx-target="#content" hx-push-url="true">Inscripción</a></li>
+                        <li><a href="/board" hx-get="/board" hx-target="#content" hx-push-url="true">Tablero</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div id="content">  
+                {% block content %}
+                <!-- All main content will be completed here -->
+                {% endblock %}
+        </div>
+        </main>
+
+        <footer>
+            <div id="logo">
+                <div id="icon"></div>
+                <h1>Gambito de Puente tocinos</h1>
+                <p>Asociación de ajedrez</p>
+            </div>
+            <div id="contact">
+                <h1>Contacto</h1>
+                <nav>
+                    <ul>
+                        <li><div id="ubication-img"></div><a href="/contact">Puente Tocinos, Murcia</a></li>
+                        <li><div id="phone-img"></div><a>+34 695 91 16 09</a></li>
+                        <li><div id="mail-img"></div><a>info@gambitopuentetocinos.es</a></li>
+                    </ul>
+            </div>
+            <div id="schedule">
+                <h1>Horarios del club</h1>
+                <nav>
+                    <ul>
+                        <li><p>Lunes a Viernes: 17:00 - 21:00</p></li>
+                        <li><p>Sábados: 10:00 - 14:00</p></li>
+                        <li><p>Domingos: Cerrado</p></li>
+                    </ul>
+            </div>
+        </footer>
+    </body>
+</html>
