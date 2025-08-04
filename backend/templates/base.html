@@ -1,90 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Gambito de Puente Tocinos{% endblock %}</title>
-        <link rel="stylesheet" href="../static/styles.css">
-        <script src="../static/min_htmx.js"></script>
-        <link rel="icon" href="../static/images/icon_gold.svg" sizes="any" type="image/svg+xml">
-    </head>
 
-    <body>
-        
-        <div id="toast"></div>
-        <header>
-            <div class="logo">
-                <div class="icon">
-                    <img src="../static/images/icon_gold.svg" alt="Gambito de Puente Tocinos Logo">
-                </div>
-                <div class="logo-text-group">
-                    <h1>Gambito de Puente Tocinos</h1>
-                    <p>Asociación de ajedrez</p>
-                </div>
-                </div>
-            <div>
-            <div>
-                <nav>
-                    <ul>
-                        <li><a href="/" hx-get="/" hx-target="#content" hx-push-url="true">Inicio</a></li>
-                        <li><a href="/news" hx-get="/news" hx-target="#content" hx-push-url="true">Noticias</a></li>
-                        <li><a href="/schedule" hx-get="/schedule" hx-target="#content" hx-push-url="true">Horarios</a></li>
-                        <li><a href="/funders" hx-get="/funders" hx-target="#content" hx-push-url="true">Fundadores</a></li>
-                        <li><a href="/galery" hx-get="/galery" hx-target="#content" hx-push-url="true">Galería</a></li>
-                        <li><a href="/form" hx-get="/form" hx-target="#content" hx-push-url="true">Inscripción</a></li>
-                        <li><a href="/board" hx-get="/board" hx-target="#content" hx-push-url="true">Tablero</a></li>
-                    </ul>
-                </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gambito de Puente Tocinos{% endblock %}</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/min_htmx.js"></script>
+    <link rel="icon" href="../static/images/icon_gold.svg" sizes="any" type="image/svg+xml">
+</head>
+
+<body>
+
+    <div id="toast"></div>
+
+    <header>
+        <div class="logo" hx-get="/" hx-target="#content" hx-push-url="true" style="cursor: pointer;">
+            <div class="icon"  hx-get="/" hx-target="#content" hx-push-url="true" style="cursor: pointer;"> 
+                <img src="../static/images/icon_gold.svg" alt="Gambito de Puente Tocinos Logo">
             </div>
-        </header>
-
-        <main>
-            <div id="content">  
-                {% block content %}
-                <!-- All main content will be completed here -->
-                {% endblock %}
+            <div class="logo-text-group">
+                <h1>Gambito de Puente Tocinos</h1>
+                <p>Asociación de ajedrez</p>
+            </div>
         </div>
-        </main>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="/" hx-get="/" hx-target="#content" hx-push-url="true">Inicio</a></li>
+                    <li><a href="/news" hx-get="/news" hx-target="#content" hx-push-url="true">Noticias</a></li>
+                    <li><a href="/schedule" hx-get="/schedule" hx-target="#content" hx-push-url="true">Horarios</a></li>
+                    <li><a href="/funders" hx-get="/funders" hx-target="#content" hx-push-url="true">Fundadores</a></li>
+                    <li><a href="/galery" hx-get="/galery" hx-target="#content" hx-push-url="true">Galería</a></li>
+                    <li><a href="/form" hx-get="/form" hx-target="#content" hx-push-url="true">Inscripción</a></li>
+                    <li><a href="/board" hx-get="/board" hx-target="#content" hx-push-url="true">Tablero</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="content">
+            {% block content %}
+            <!-- All main content will be completed here -->
+            {% endblock %}
+        </div>
+    </main>
 
-        <footer>
-            <div class="logo">
-                <div class="icon">
-                    <img src="../static/images/icon_gold.svg" alt="Gambito de Puente Tocinos Logo">
-                </div>
-                <div class="logo-text-group">
-                    <h1>Gambito de Puente Tocinos</h1>
-                    <p>Asociación de ajedrez</p>
-                </div>
+    <footer>
+        <div class="logo">
+            <div class="icon">
+                <img src="../static/images/icon_gold.svg" alt="Gambito de Puente Tocinos Logo">
             </div>
-            
-            <div id="contact">
-                <h1>Contacto</h1>
-                <nav>
-                    <ul>
-                        <li><div id="ubication-img">
+            <div class="logo-text-group">
+                <h1>Gambito de Puente Tocinos</h1>
+                <p>Asociación de ajedrez</p>
+            </div>
+        </div>
+
+        <div id="contact">
+            <h1>Contacto</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <div id="ubication-img">
                             <img src="../static/images/ubication.svg" alt="Ubication">
-                        </div><a href="/contact">Puente Tocinos, Murcia</a></li>
-                        <li><div id="phone-img">
+                        </div><a href="/contact">Puente Tocinos, Murcia</a>
+                    </li>
+                    <li>
+                        <div id="phone-img">
                             <img src="../static/images/phone.svg" alt="Phone">
-                        </div><a>+34 695 91 16 09</a></li>
-                        <li><div id="mail-img">
+                        </div><a>+34 695 91 16 09</a>
+                    </li>
+                    <li>
+                        <div id="mail-img">
                             <img src="../static/images/mail.svg" alt="Mail">
-                        </div><a>info@gambitopuentetocinos.es</a></li>
-                    </ul>
-            </div>
-            
-            <div id="schedule">
-                <h1>Horarios del club</h1>
-                <nav>
-                    <ul>
-                        <li><p>Lunes a Viernes: 17:00 - 21:00</p></li>
-                        <li><p>Sábados: 10:00 - 14:00</p></li>
-                        <li><p>Domingos: Cerrado</p></li>
-                    </ul>
-            </div>
-            <div id="copyright">
-                <p>&copy; 2025 Gambito de Puente Tocinos. Todos los derechos reservados.</p>
-            </div>
-        </footer>
-    </body>
+                        </div><a>info@gambitopuentetocinos.es</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="schedule">
+            <h1>Horarios del club</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <p>Lunes a Viernes: 17:00 - 21:00</p>
+                    </li>
+                    <li>
+                        <p>Sábados: 10:00 - 14:00</p>
+                    </li>
+                    <li>
+                        <p>Domingos: Cerrado</p>
+                    </li>
+                </ul>
+        </div>
+        <div id="copyright">
+            <p>&copy; 2025 Gambito de Puente Tocinos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
 </html>

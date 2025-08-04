@@ -11,17 +11,23 @@
     </p>
 
     <ul>
-      <li>
-        <div id="trophy-img"></div>
-        Fundado en 2025
+      <li class="index-item">
+        <div id="paper-img">
+          <img src="../static/images/paper.svg" alt="Paper" />
+        </div>
+        <p>Fundado en 2025</p>
       </li>
-      <li>
-        <div id="people-img"></div>
-        +10 miembros
+      <li class="index-item">
+        <div id="people-img">
+          <img src="../static/images/people.svg" alt="People" />
+        </div>
+        <p>+10 miembros</p>
       </li>
-      <li>
-        <div id="star-img"></div>
-        Todos los niveles
+      <li class="index-item">
+        <div id="chess-img">
+          <img src="../static/images/chess.svg" alt="Chess" />
+        </div>
+        <p>Todos los niveles</p>
       </li>
     </ul>
 
@@ -42,8 +48,10 @@
             alt="Inscripciones Otoño 2025"
             class="news-image lazy-load-image"
           />
-          <h3>Inscripciones Otoño 2025</h3>
-          <p class="news-date">Fecha: 11/06/2025</p>
+          <div class="news-header">
+            <h3>Inscripciones Otoño 2025</h3>
+            <p class="news-date">Fecha: 11/06/2025</p>
+          </div>
           <p>
             ¡Ya están abiertas las inscripciones para la temporada de otoño! No
             pierdas la oportunidad de unirte a nuestras actividades y torneos.
@@ -52,31 +60,37 @@
             Inscríbete
           </button>
         </div>
+
         <div class="news-item">
           <img
             src="/static/images/news1.jpg"
-            alt="Inscripciones Otoño 2025"
+            alt="Apertura del club"
             class="news-image lazy-load-image"
           />
-          <h3>Taller de aperturas</h3>
-          <p class="news-date">Fecha: 11/06/2025</p>
+          <div class="news-header">
+            <h3>Apertura del club</h3>
+            <p class="news-date">Fecha: 29/06/2025</p>
+          </div>
           <p>
-            Durante el mes de julio, organizaremos un taller de aperturas
-            dirigido por André Yermak Naumenko, para dar a conocer las
-            estrategias más efectivas en un inicio de juego. ¡No te lo pierdas!
+            Nos complace anunciar la apertura oficial del Club de Ajedrez
+            Gambito de Puente Tocinos. Nuestro equipo está impaciente por
+            empezar esta nueva aventura junto a todos ustedes.
+            ¿Quieres unirte a nosotros? ¡Inscríbete ahora!
           </p>
         </div>
 
         <div class="news-item">
           <img
             src="/static/images/news1.jpg"
-            alt="Inscripciones Otoño 2025"
+            alt="Campeonato Septiembre"
             class="news-image lazy-load-image"
           />
-          <h3>Campeonato Septiembre</h3>
-          <p class="news-date">Fecha: 11/06/2025</p>
+          <div class="news-header">
+            <h3>Campeonato Septiembre</h3>
+            <p class="news-date">Fecha: 11/06/2025</p>
+          </div>
           <p>
-            Anunciamos el campeonato mensual de septiembre. Todos los miembros
+             Anunciamos el campeonato mensual de septiembre. Todos los miembros
             están invitados a participar. ¡Demuestra tus habilidades y gana
             premios!
           </p>
@@ -91,7 +105,6 @@
         </div>
       </section>
     </div>
-
     <div class="section-content">
       <h2>Horarios y programación semanal de las clases</h2>
       <p>
@@ -103,8 +116,11 @@
           <h2>Horarios de Clases</h2>
           <div>
             <div>
-              <div>
-                <h3>Programación Semanal</h3>
+              <div id="horarios-header">
+                <div id="clock-img">
+                  <img src="../static/images/clock.svg" alt="Paper" />
+                </div>
+                <h4>Programación Semanal</h4>
               </div>
               <div>
                 <table>
@@ -129,26 +145,48 @@
                       </td>
                       <td>09:00 - 10:00 AM</td>
                       <td>Principiante</td>
-                      <td>Juan Pérez</td>
+                      <td>Iván Ayala López</td>
                     </tr>
                     <tr>
                       <td>
                         <div>
                           <div>📅</div>
                           <div>
-                            <h3>Martes</h3>
-                            <p>10:30 - 11:30 AM</p>
+                            <h3>Miércoles</h3>
+                            <p>6:30 - 8:00 PM</p>
                           </div>
                         </div>
                       </td>
-                      <td>10:30 - 11:30 AM</td>
+                      <td>6:30 - 8:00 PM</td>
                       <td>Intermedio</td>
-                      <td>Ana García</td>
+                      <td>Arturo Cano Serrano</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div>
+                          <div>📅</div>
+                          <div>
+                            <h3>Sábado</h3>
+                            <p>09:00 - 10:15 AM</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>09:00 - 10:15 AM</td>
+                      <td>Avanzado</td>
+                      <td>Iván Ayala López</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+          </div>
+          <div id="additional-info">
+            <h4>Información adicional</h4>
+            <p>
+            Las clases entre semana se imparten en nuestras instalaciones ubicadas en el Centro Cultural de Puente Tocinos.
+             Los sábados, las clases se realizan en "La Nave".
+             Para más información sobre niveles y requisitos, no dudes en contactarnos.
+            </p>
           </div>
         </div>
       </section>
@@ -184,7 +222,7 @@
         </div>
         <div class="team-member">
           <img
-            src="/static/images/team1.jpg"
+            src="../static/images/andre.jpg"
             alt="Andre Yermak Naumenko"
             class="team-image lazy-load-image"
           />
@@ -206,18 +244,18 @@
         </div>
         <div class="team-member">
           <img
-            src="/static/images/team1.jpg"
+            src="../static/images/laura.jpg"
             alt="Laura Soler"
             class="team-image lazy-load-image"
           />
-          <h3>Laura Soler</h3>
+          <h3>Laura Soler López</h3>
           <p class="team-position">Secretaria</p>
           <a class="fide-elo-link">ELO: ----</a>
           <p>
             Especialista en ajedrez pedagógico y formación de jóvenes talentos.
           </p>
           <p class="member-quote">
-            "El conocimiento compartido se multiplica."
+            "Mi estrategia es tan buena que hasta yo me sorprendo cuando pierdo en cuatro jugadas"
           </p>
         </div>
         <div class="team-member">
@@ -242,7 +280,7 @@
         </div>
         <div class="team-member">
           <img
-            src="/static/images/team1.jpg"
+            src="../static/images/ivan.jpg"
             alt="Ivan Ayala Lopez"
             class="team-image lazy-load-image"
           />
@@ -253,7 +291,7 @@
             Organizador de torneos y eventos, con amplia experiencia en gestión
             deportiva.
           </p>
-          <p class="member-quote">"La organización es la clave del éxito."</p>
+          <p class="member-quote">"Lo sé todo, pero no sé nada, el aprendizaje es continuo"</p>
         </div>
         <div class="team-member">
           <img
@@ -323,12 +361,13 @@
         </div>
       </section>
     </div>
-    <div class="section-content">
-      <h2>Inscríbete</h2>
+    <div class="section-content" id="inscription-section">
+      <h2>Inscríbete al Club!</h2>
       <p>
         Si estás interesado en unirte a nuestro club y disfrutar de todas las
-        ventajas de ser miembro, completa nuestro formulario de inscripción. ¡Te
-        esperamos con los brazos abiertos!
+        ventajas de ser miembro, puedes completar nuestro formulario de
+        inscripción y te notificaremos lo antes posible. ¡Te esperamos con los
+        brazos abiertos!
       </p>
       <button class="btn" hx-get="/form" hx-target="#content">
         Inscríbete ahora

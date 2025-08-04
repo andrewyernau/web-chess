@@ -1,9 +1,211 @@
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const select = document.getElementById("experience");
+
+    select.addEventListener("mousedown", () => {
+      select.classList.toggle("open");
+    });
+
+    select.addEventListener("blur", () => {
+      select.classList.remove("open");
+    });
+  });
+</script>
+
+<style>
+  #form-registration {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    max-width: 700px;
+    margin: 2em auto;
+    padding: 2.5em;
+    background-color: var(--gray-3);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #form-registration>div>div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+  }
+
+  #form-registration>div:first-child {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    flex-wrap: wrap;
+  }
+
+  #form-registration>div:first-child>div {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  #form-registration .phone-age-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    flex-wrap: wrap;
+  }
+
+  #form-registration .phone-age-row>div {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  #form-registration label {
+    font-weight: 600;
+    color: var(--gray-11);
+    font-size: 1em;
+    display: block;
+  }
+
+  #form-registration input,
+  #form-registration textarea,
+  #form-registration select {
+    width: 100%;
+    padding: 1em 1.2em;
+    border-radius: 8px;
+    border: 1px solid var(--yellow-6);
+    font-size: 1em;
+    color: var(--dark-gray);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--gray-3);
+    background-repeat: no-repeat;
+    background-position: right 1.2em center;
+    background-size: 0.8em;
+  }
+
+  #form-registration select.open {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23343a40" viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>');
+  }
+
+  #form-registration select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23343a40" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  #form-registration input::placeholder,
+  #form-registration textarea::placeholder {
+    color: var(--gray-6);
+    font-style: italic;
+  }
+
+  #form-registration input:focus,
+  #form-registration textarea:focus,
+  #form-registration select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+
+  #form-registration textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  #form-registration button[type="submit"] {
+    width: 100%;
+    padding: 1em 1.5em;
+    background-color: var(--yellow-5);
+    color: var(--gray-10);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  }
+
+  #form-registration button[type="submit"]:hover {
+    background-color: var(--yellow-9);
+    color: var(--gray-4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  #form-registration button[type="submit"]:active {
+    background-color: var(--gray-4);
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  #form-registration button[type="submit"]:disabled {
+    background-color: var(--gray-6);
+    cursor: not-allowed;
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  @media (max-width: 600px) {
+    #form-registration {
+      padding: 1.5em;
+      margin: 1.5em auto;
+      border-radius: 8px;
+    }
+
+    #form-registration>div:first-child {
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    #form-registration>div:first-child>div {
+      min-width: unset;
+    }
+
+    #form-registration .phone-age-row {
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    #form-registration .phone-age-row>div {
+      min-width: unset;
+    }
+
+    #form-registration input,
+    #form-registration textarea,
+    #form-registration select {
+      padding: 0.8em 1em;
+    }
+
+    #form-registration button[type="submit"] {
+      padding: 0.8em 1em;
+      font-size: 1em;
+    }
+  }
+</style>
+<script>
+  document.body.addEventListener("htmx:afterSwap", (e) => {
+    const toast = document.getElementById("auto-toast");
+
+    if (toast && e.target.id === "toast") {
+      
+      setTimeout(() => {
+        toast.style.transition = "opacity 0.5s ease";
+        toast.style.opacity = "0";
+      }, 2500);
+
+      
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 5000);
+    }
+  });
+</script>
 <form
   id="form-registration"
   hx-post="/form"
-  hx-swap="innerHTML settle:3s"
+  hx-swap="innerHTML"
   hx-target="#toast"
 >
+  <h2>Formulario de Inscripción</h2>
   <div>
     <div>
       <label for="name">Nombre Completo *</label>
@@ -14,25 +216,35 @@
       <input type="email" id="email" name="email" required />
     </div>
   </div>
-  <div>
-    <label for="phone">Teléfono</label>
-    <input type="tel" id="phone" name="phone" />
+
+  <div class="phone-age-row">
+    <div>
+      <label for="phone">Teléfono</label>
+      <input type="tel" id="phone" name="phone" placeholder="+34 612 34 56 78" />
+    </div>
+    <div>
+      <label for="age">Edad *</label>
+      <input type="number" id="age" name="age" min="0" required />
+    </div>
   </div>
+
   <div>
     <label for="experience">Nivel de Experiencia</label>
-    <input
-      type="text"
-      id="experience"
-      name="experience"
-      placeholder="Ej: Principiante, Intermedio, Avanzado, ELO..."
-    />
+    <select id="experience" name="experience">
+      <option value="">Selecciona tu nivel...</option>
+      <option value="principiante">Principiante</option>
+      <option value="intermedio">Intermedio</option>
+      <option value="avanzado">Avanzado</option>
+      <option value="maestro">Maestro</option>
+      <option value="elo">Jugador con ELO (Indicar en mensaje)</option>
+    </select>
   </div>
   <div>
-    <label for="message">Mensaje (Opcional)</label>
+    <label for="message">¿Por qué quieres unirte?</label>
     <textarea
       id="message"
       name="message"
-      placeholder="Cuéntanos sobre tus objetivos en el ajedrez..."
+      placeholder="Comenta tus motivaciones, expectativas o cualquier detalle que consideres relevante."
       rows="4"
     ></textarea>
   </div>

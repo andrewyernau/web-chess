@@ -27,6 +27,14 @@ pub struct FormRegistrationContent {}
 #[template(path = "form-tournaments-content.html")]
 pub struct FormTournamentsContent {}
 
+#[derive(Template)]
+#[template(path = "board.html")]
+pub struct FullBoard {}
+
+#[derive(Template)]
+#[template(path = "board-content.html")]
+pub struct Board {}
+
 impl IntoResponse for FullIndex {
     fn into_response(self) -> axum::response::Response {
         match self.render() {
@@ -35,6 +43,25 @@ impl IntoResponse for FullIndex {
         }
     }
 }
+
+impl IntoResponse for FullBoard {
+    fn into_response(self) -> axum::response::Response {
+        match self.render() {
+            Ok(html) => Html(html).into_response(),
+            Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, format!("Template error: {}", e)).into_response(),
+        }
+    }
+}
+
+impl IntoResponse for Board {
+    fn into_response(self) -> axum::response::Response {
+        match self.render() {
+            Ok(html) => Html(html).into_response(),
+            Err(e) => (StatusCode::INTERNAL_SERVER_ERROR, format!("Template error: {}", e)).into_response(),
+        }
+    }
+}
+
 impl IntoResponse for FullFormRegistration {
     fn into_response(self) -> axum::response::Response {
         match self.render() {
